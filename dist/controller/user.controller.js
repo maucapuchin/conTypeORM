@@ -55,7 +55,7 @@ exports.createUser = function (req, res) { return __awaiter(void 0, void 0, void
         switch (_a.label) {
             case 0:
                 newUser = typeorm_1.getRepository(User_1.User).create(req.body);
-                console.log(newUser);
+                console.log(req.body);
                 return [4 /*yield*/, typeorm_1.getRepository(User_1.User).save(newUser)];
             case 1:
                 results = _a.sent();

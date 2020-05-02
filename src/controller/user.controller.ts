@@ -10,7 +10,7 @@ export const getUsers = async (req: Request, res: Response): Promise<Response> =
 export const createUser = async (req: Request, res: Response): Promise<Response> => {
     //console.log(req.body)
     const newUser = getRepository(User).create(req.body);
-    console.log(newUser)
+    console.log(req.body)
     const results = await getRepository(User).save(newUser);
     return res.json(results)
 }

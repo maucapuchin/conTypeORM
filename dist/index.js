@@ -9,7 +9,9 @@ var morgan_1 = __importDefault(require("morgan"));
 var cors_1 = __importDefault(require("cors"));
 var typeorm_1 = require("typeorm");
 var user_routes_1 = __importDefault(require("./routes/user.routes"));
+var body_parser = require('body-parser');
 var app = express_1.default();
+app.use(body_parser.urlencoded({ extended: true }));
 typeorm_1.createConnection();
 //middlewares
 app.use(cors_1.default());
