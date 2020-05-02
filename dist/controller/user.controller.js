@@ -49,3 +49,17 @@ exports.getUsers = function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); };
+exports.createUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var newUser, results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                newUser = typeorm_1.getRepository(User_1.User).create(req.body);
+                console.log(newUser);
+                return [4 /*yield*/, typeorm_1.getRepository(User_1.User).save(newUser)];
+            case 1:
+                results = _a.sent();
+                return [2 /*return*/, res.json(results)];
+        }
+    });
+}); };

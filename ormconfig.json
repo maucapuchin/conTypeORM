@@ -5,6 +5,7 @@
     "username": "root",
     "password": "",
     "database": "typeormdatabasetest",
-    "entities": "dist/entity/**/*.js",
+    "entities": ["dist/entity/**/*.js"],
+    "logging": false,
     "synchronize": true
  }

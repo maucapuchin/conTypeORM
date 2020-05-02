@@ -20,7 +20,7 @@ var User = /** @class */ (function () {
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
-    ], User.prototype, "fistname", void 0);
+    ], User.prototype, "firstname", void 0);
     __decorate([
         typeorm_1.Column(),
         __metadata("design:type", String)
