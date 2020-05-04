@@ -8,7 +8,7 @@ import {
 } from '../controller/user.controller'
 
 import { create } from 'domain';
-
+/*  */
 router.get('/user', getUsers);
 router.post('/createUsers', createUser);
 router.get('/user/:id', getUser);
