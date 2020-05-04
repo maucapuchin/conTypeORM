@@ -5,7 +5,7 @@ import {
     getUsers, 
     createUser,
     getUser
-} from '../controller/user.controller'
+} from '../controller/user.controller';
 
 import { create } from 'domain';
 
