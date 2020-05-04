@@ -3,13 +3,14 @@ const router = Router();
  
 import {
     getUsers, 
-    createUser
+    createUser,
+    getUser
 } from '../controller/user.controller'
 
 import { create } from 'domain';
 
 router.get('/user', getUsers);
-router.get('/user/:id', );
 router.post('/createUsers', createUser);
+router.get('/user/:id', getUser);
 
 export default router
