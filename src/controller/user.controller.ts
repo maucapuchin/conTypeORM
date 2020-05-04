@@ -23,3 +23,22 @@ export const getUser = async (req: Request, res: Response): Promise<Response> =>
     const user = await getRepository(User).findOne(req.params.id);
     return res.json(user)
 }
+
+export const updateUser = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
+    const user = await getRepository(User).findOne(req.params.id);
+    if (user) {
+      getRepository(User).merge(user, req.body);
+      const results = await getRepository(User).save(user);
+      return res.json(results);
+    }
+  
+    return res.json({msg: 'Not user found'});
+  };
+  
+  export const deleteUser = async (req: Request, res: Response): Promise<Response> => {
+    const results = await getRepository(User).delete(req.params.id);
+    return res.json(results);
+  };

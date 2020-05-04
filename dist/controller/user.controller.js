@@ -73,3 +73,31 @@ exports.getUser = function (req, res) { return __awaiter(void 0, void 0, void 0,
         }
     });
 }); };
+exports.updateUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var user, results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, typeorm_1.getRepository(User_1.User).findOne(req.params.id)];
+            case 1:
+                user = _a.sent();
+                if (!user) return [3 /*break*/, 3];
+                typeorm_1.getRepository(User_1.User).merge(user, req.body);
+                return [4 /*yield*/, typeorm_1.getRepository(User_1.User).save(user)];
+            case 2:
+                results = _a.sent();
+                return [2 /*return*/, res.json(results)];
+            case 3: return [2 /*return*/, res.json({ msg: 'Not user found' })];
+        }
+    });
+}); };
+exports.deleteUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var results;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, typeorm_1.getRepository(User_1.User).delete(req.params.id)];
+            case 1:
+                results = _a.sent();
+                return [2 /*return*/, res.json(results)];
+        }
+    });
+}); };
